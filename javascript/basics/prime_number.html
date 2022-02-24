@@ -1,0 +1,27 @@
+<html>
+
+<!--2. JavaScript Program to Add Two Numbers-->
+	<head></head>
+	<body>
+		<script>
+			let num = parseInt(prompt("enter a number :"));
+			if(num == 1){
+				document.write(num +  " is not a Prime number");
+			}
+			if(num == 2){
+				document.write(num +  " is a Prime number");
+			}
+			
+			for (let i = 2; i < num; i++){
+			     if(num%i == 0){
+				  document.write(num + " is not a Prime number");
+				  break;
+			     }
+			     else{
+				  document.write(num + " is Prime number");
+				  break;
+			     }
+       		 }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<style>
+			#parent{
+				width:40%;
+				height:40%;
+				border:1px solid black;
+				margin:auto;
+				background-color:black;
+				color:white;
+				//margin-top:10%;
+			}
+			body{
+				background-attachment: fixed;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				//background-image:url("dark-wallpaper-26.jpg");
+				//background-color: aquamarine;
+			}
+			h1{
+				text-align:center;
+				//margin-bottom:0%;
+			}
+			#input1{
+				width:70%;
+				height:10%;
+				margin-top:5%;
+			}
+			#input2{
+				width:70%;
+				height:10%;
+				margin-top:5%;
+			}
+			#input3{
+				width:70%;
+				height:10%;
+				margin-top:5%;
+				margin-left:11%;
+			}
+			#input4{
+				width:8%;
+				height:15%;
+				margin-top:5%;
+				margin-left:30%;
+			}
+			#input5{
+				width:8%;
+				height:15%;
+				margin-top:5%;
+				//margin-left:9%;
+			}
+			#input6{
+				width:8%;
+				height:15%;
+				margin-top:5%;
+				//margin-left:9%;
+			}
+			#input7{
+				width:8%;
+				height:15%;
+				margin-top:5%;
+				//margin-left:9%;
+			}
+			#input8{
+				width:8%;
+				height:15%;
+				margin-top:5%;
+				//margin-left:9%;
+			}
+			#home{
+				//border:1px solid black;
+				margin-top:10%;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--JavaScript calculator-->
+		<div id = "home">
+			<h1>Simple calculator using Js</h1>
+			<div id = "parent">
+				<form>
+					enter 1st value <input type = "tel" id = "input1"><br>
+					enter 2st value <input type = "tel" id = "input2" ><br>
+					result<input type = "tel" id = "input3" value = ""><br>			
+					<input type = "button" id = "input4" value = "+" onclick = "calculator(this)">
+					<input type = "button" id = "input5" value = "-" onclick = "calculator(this)">
+					<input type = "button" id = "input6" value = "*" onclick = "calculator(this)">
+					<input type = "button" id = "input7" value = "/" onclick = "calculator(this)">
+						
+					
+				</form>
+			</div>
+		</div>
+		<script>
+			function calculator(num){
+				console.log(num);
+				console.log(num.value);
+				
+				let num1 = parseFloat(document.getElementById("input1").value); 
+				let num2 = parseFloat(document.getElementById("input2").value); 
+				let sign = num.value; 
+				if(sign == "+"){
+					document.getElementById("input3").value = num1+num2;
+				}
+				if(sign == "-"){
+					document.getElementById("input3").value = num1-num2;
+				}
+				if(sign == "*"){
+					document.getElementById("input3").value = num1*num2;
+				}
+				if(sign == "/"){
+					document.getElementById("input3").value = num1/num2;
+				}
+				
+				
+				
+			}
+		</script>
+	</body>
+</html>

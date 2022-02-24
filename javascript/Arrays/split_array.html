@@ -1,0 +1,21 @@
+<html>
+	<head></head>
+	<body>
+		<!--14. JavaScript Program to Split Array into Smaller Chunk-->
+		<script>
+			let array = [2,4,6,8,9,5,4,7];
+			let chunk = 2;
+			for(let i = 0; i < array.length; i += chunk){
+				let result = array.slice(i, i + chunk);
+				document.write("["+result+"]"+"<br>");
+				
+			
+			
+				//document.write(array[i]+"<br>");
+				//console.log(array[i]+"<br>");
+			}
+			
+			
+		</script>
+	</body>
+</html >

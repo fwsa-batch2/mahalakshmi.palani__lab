@@ -1,0 +1,25 @@
+<html>
+	<head></head>
+	<body>
+		<!--JavaScript Program compare array-->
+		<script>
+			function myArray(arr1,arr2){
+				// compare arrays
+				//let result = JSON.stringify(arr1)==JSON.stringify(arr2);
+				
+				let result =  arr1.toString() === arr2.toString();
+				console.log(result);
+				if(result){
+					document.write("'The arrays have the same elements.'");
+				}
+				else {
+        				document.write('The arrays have different elements.');
+  				  }
+			}
+			const array1 = [1, 3, 5, 8];
+			const array2 = [1, 3, 5, 8];
+			myArray(array1,array2);
+			
+		</script>
+	</body>
+</html>

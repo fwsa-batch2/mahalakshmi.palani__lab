@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title>calculator</title>
+		<style>
+			div{
+				width:25%;
+				//border:1px solid black;
+				margin:auto;
+			}
+			.input{
+				width:24%;
+				height:8%;
+				//margin-left:4%;
+				background-color:black;
+				color:white;
+			}
+			body{
+				background-attachment: fixed;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-image:url("macbook-minimal-dark-wallpaper.jpg");
+				//background-color: aquamarine;
+			}
+			#display{
+				width:96%;
+				height:10%;
+				font-size:30px;
+			}
+			#del{
+				width:96%;
+				height:10%;
+				background-color:black;
+				//border:1px solid black;
+				color:white;
+			}
+			h1{
+				text-align:center;
+				margin-top:10%;
+				color:white;
+			}
+			.s-input{
+				margin-left:-5px;
+			}
+		</style>	
+	</head>
+	
+	<body>
+		<h1>Simple Calculator</h1>
+		<div>
+			<input type = "text" placeholder = "0" id = "display">
+			<input type = "button" value = "1" class = "input" onclick = "calculator(this)">
+			<input type = "button" value = "2"  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "3"  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "+"  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "4"  class = "input" onclick = "calculator(this)">
+			<input type = "button" value = "5"  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "6"  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "-"  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "7"  class = "input" onclick = "calculator(this)">
+			<input type = "button" value = "8"  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "9"  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "*"  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "/"  class = "input" onclick = "calculator(this)">
+			<input type = "button" value = "0"  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "."  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "="  class = "input s-input" onclick = "calculator(this)">
+			<input type = "button" value = "C"  id = "del" onclick = "calculator(this)">
+			
+		</div>
+		<script src="calculator.js"></script>
+	</body>
+</html>

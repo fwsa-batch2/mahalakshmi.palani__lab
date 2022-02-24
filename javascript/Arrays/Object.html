@@ -1,0 +1,28 @@
+<html>
+	<head></head>
+	<body>
+		<!--10. JavaScript Program to Extract Given Property Values from Objects as Array-->
+		<script>
+			let car = {type:"Fiat", model:"500", color:"white"};
+			//console.log(car["type"]);
+			//console.log(car["model"]);
+			//console.log(car.type);
+			
+			//Array of Object
+			
+			let arrayOfObject = [ { id: 1, name: "Maha" }, { id: 2, name: "Lakshmi" }, { id: 3, name: "Ragavi" },]
+			let user = arrayOfObject[1];
+			console.log(user); 
+			const username = user["name"];
+			console.log(username); //  "Abisha"
+
+			//Object of Array
+			
+			let objectOfArray = { id :1, name : "abi",drinks: ["Coke", "Slice", "7up"]};
+			const drinks = objectOfArray.drinks;
+			const output = drinks[1];
+			console.log(output);
+
+		</script>
+	</body>
+</html>

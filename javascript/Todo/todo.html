@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#home{
+			border:1px solid black;
+			width:30%;
+			height:50%;
+			margin:auto;
+			margin-top:13%;
+		}
+		body{
+			  background-attachment: fixed;
+			  background-size: 100%;
+			  background-repeat: no-repeat;
+			  background-image:url("lighting-wallpaper-3.jpg");
+			  
+		  }
+		form{
+			
+			width:100%;
+			height:100%;
+		}
+		#newTask{
+			border:1px solid black;
+			width:80%;
+			height:15%;
+			margin-left:10%;
+			font-size:20px;
+		}
+		#addbutton{
+			border:1px solid black;
+			width:20%;
+			height:10%;
+			margin-top:5%;
+			background-color: #0047a3c9;
+		}
+		#clear{
+			border:1px solid black;
+			width:20%;
+			height:10%;
+			margin-left:30%;
+			background-color: #0047a3c9;
+		}
+		h1{
+			text-align:center;
+		}
+		li{
+		 list-style:none;
+		font-size:20px;
+		}
+		#unorder{
+			overflow:auto;
+			height:30%;
+			width:80%;
+		}
+	</style>
+</head>
+<body>
+	<div id = "home">
+		<h1>TODO APP</h1>
+		
+		
+			<form onsubmit = "submitHandler()">
+				<input type="text"  id="newTask" placeholder="Enter new Task" required><br>
+				<!-- <input type = "button" id = "clear" value = "clear" onclick = "textClear()"> -->
+				<button type="submit" id="addbutton" > Add Task </button>
+				<ul id = "unorder">
+					
+				</ul>
+			</form>
+		
+	</div>
+	<script>
+		let myArray = [];
+		function submitHandler(){
+			 event.preventDefault();
+			 let task = document.getElementById("newTask").value;
+			 console.log(task);
+			 myArray.push(task);
+			 let order = document.getElementById("unorder");
+			 order.innerHTML += task+"<br>";
+			 let taskListInString = JSON.stringify(myArray);
+			 localStorage.setItem("myArray", taskListInString);
+			 
+			 renderTask();
+			 
+		}
+		function renderTask(){
+			// let taskListInString = JSON.stringify(myArray);
+			let taskInString =  localStorage.getItem("myArray");
+			console.log(taskInString);
+			let taskInArray = JSON.parse(taskInString);
+			console.log(taskInArray);
+			let noOfTask = taskInArray.length;
+			// console.log(noOfTask);
+			let num = "";
+			for(let i = 0; i < noOfTask; i++){
+				  //const _task = tasksInArray[i];
+				 let list = "<li>"+taskInArray[i]+"</li>"
+				 console.log(list);
+				 num = num+list;
+			 }
+			 let order = document.getElementById("unorder");
+			 order.innerHTML = num;
+		}
+		renderTask();
+		
+	
+	</script>
+</body>
+</html>
