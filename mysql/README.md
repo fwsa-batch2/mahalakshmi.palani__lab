@@ -22,8 +22,8 @@
 ---
 ### MySQL CREATE TABLE Statement;
 >create table student_info(id int primary key auto_increment, name varchar(20),DOB date UNIQUE );
----
 Query OK, 0 rows affected (0.04 sec)
+----
 ### MySQL SHOW TABLES Statement:
 >SHOW TABLES;
 ---
@@ -61,7 +61,7 @@ Query OK, 1 row affected (0.01 sec)
 3 rows in set (0.00 sec)
 ### MySQL WHERE Clause:
 
-```SELECT * FROM student_info WHERE Id='1';```
+````SELECT * FROM student_info WHERE Id='1';````
 ---
 
 | id | name | DOB        |
