@@ -249,7 +249,7 @@ Empty set (0.00 sec)
 4 rows in set (0.00 sec)
 ### MySQL LIKE Operator:
 ```select*from student_info where name like  '%i';```
-
+----
 | id | name      | DOB        |
 |----|-----------|------------|
 |  2 | viji      | 1999-08-15 |
@@ -261,7 +261,7 @@ Empty set (0.00 sec)
 
 ### MySQL IN Operator:
 ```select*from student_info where  name in('maha','pavi');```
-
+----
 | id | name | DOB        |
 |----|------|------------|
 |  1 | maha | 2000-11-23 |
@@ -271,7 +271,7 @@ Empty set (0.00 sec)
 
 ### Aggregate functions in SQL:
 ```select min(mark) from mark_list;```
-
+----
 | min(mark) |
 |-----------|
 |        86 |
@@ -279,7 +279,7 @@ Empty set (0.00 sec)
 1 row in set (0.01 sec)
 
 ```select max(mark) from mark_list;```
-
+----
 | max(mark) |
 |-----------|
 |        99 |
@@ -287,7 +287,7 @@ Empty set (0.00 sec)
 1 row in set (0.00 sec)
 
 ```select sum(mark) from mark_list;```
-
+----
 | sum(mark) |
 |-----------|
 |       284 |
@@ -295,7 +295,7 @@ Empty set (0.00 sec)
 1 row in set (0.01 sec)
 
 ```select count(mark) from mark_list;```
-
+----
 | count(mark) |
 |-------------|
 |           3 |
@@ -303,7 +303,7 @@ Empty set (0.00 sec)
 1 row in set (0.02 sec)
 
 ```select avg(mark) from mark_list;```
-
+----
 | avg(mark) |
 |-----------|
 |   94.6667 |
@@ -312,14 +312,14 @@ Empty set (0.00 sec)
 
 ### MySQL BETWEEN Operator:
 ```select*from mark_list where mark between 70 and 90;```
-
+----
 | id | mark | section |
 |----|------|---------|
 |  3 |   86 | B       |
 
 1 row in set (0.00 sec)
 ```select*from student_info where id between 2 and 9;```
-
+----
 | id | name      | DOB        |
 |----|-----------|------------|
 |  2 | viji      | 1999-08-15 |
@@ -330,7 +330,8 @@ Empty set (0.00 sec)
 4 rows in set (0.00 sec)
 ### MySQL ORDER BY Keyword:
 ```select*from student_info order by name;```
-
+----
+* ascending order:
 | id | name      | DOB        |
 |----|-----------|------------|
 |  4 | gayathiri | 2000-08-17 |
@@ -341,5 +342,36 @@ Empty set (0.00 sec)
 
 5 rows in set (0.01 sec)
 
+````select*from student_info order by name desc;```
+----
+* descending order, use the DESC keyword.
+| id | name      | DOB        |
+|----|-----------|------------|
+|  2 | viji      | 1999-08-15 |
+|  5 | sharmi    | 2000-01-13 |
+|  3 | pavi      | 2000-03-27 |
+|  1 | maha      | 2000-11-23 |
+|  4 | gayathiri | 2000-08-17 |
 
+5 rows in set (0.00 sec)
 
+### mysql group by:
+#### t1 table:
+| id   | name    | age  | salary |
+|------|---------|------|--------|
+|    1 | maha    |   21 |  10000 |
+|    2 | deepika |   21 |  20000 |
+|    3 | vanitha |   25 |  45000 |
+|    4 | maha    |   21 |  10000 |
+|    5 | deepika |   21 |  20000 |
+|    6 | vanitha |   25 |  45000 |
+|    7 | anu     |   20 |  10000 |
+
+7 rows in set (0.00 sec)
+
+SHOW FULL TABLES 
+WHERE table_type = 'VIEW';
+SHOW FULL TABLES  
+WHERE table_type != 'VIEW';
+SHOW FULL TABLES  
+WHERE table_type = 'BASE TABLE';
