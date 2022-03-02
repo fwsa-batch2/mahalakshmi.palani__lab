@@ -329,6 +329,8 @@ Empty set (0.00 sec)
 
 4 rows in set (0.00 sec)
 ### MySQL ORDER BY Keyword:
+* The SQL ORDER BY clause is used to sort the data in ascending or descending order, based on one or more columns. 
+* The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
 ```select*from student_info order by name;```
 ----
 * ascending order:
@@ -368,7 +370,30 @@ Empty set (0.00 sec)
 |    7 | anu     |   20 |  10000 |
 
 7 rows in set (0.00 sec)
+----
+### Creating a view:
+mysql> select*from student_details;
 
+| id | name     | address |
+|----|----------|---------|
+|  1 | nandhini | chennai |
+|  2 | abitha   | madurai |
+|  3 | mohana   | trichy  |
+|  4 | sandhya  | vellore |
+|  5 | poorani  | theni   |
+|  6 | maha     | chennai |
+
+6 rows in set (0.00 sec)
+mysql> select*from marks;
+
+| id | name     | mark | age  |
+|----|----------|------|------|
+|  1 | nandhini |   90 |   17 |
+|  2 | abitha   |   98 |   18 |
+|  3 | mohana   |   98 |   20 |
+|  4 | sandhya  |   78 |   18 |
+
+4 rows in set (0.00 sec)
 SHOW FULL TABLES 
 WHERE table_type = 'VIEW';
 SHOW FULL TABLES  
