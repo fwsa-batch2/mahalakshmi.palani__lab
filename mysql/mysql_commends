@@ -341,5 +341,77 @@ Empty set (0.00 sec)
 
 5 rows in set (0.01 sec)
 
+date : 9/3/2022
 
+mysql> show tables;
 
+| Tables_in_temp |
+|----------------|
+| batch_course   |
+| batch_user     |
+| batches        |
+| courses        |
+| users          |
+
+5 rows in set (0.01 sec)
+
+mysql> select*from users;
+
+| id | name   |
+|----|--------|
+|  1 | hasan  |
+|  2 | ismail |
+
+2 rows in set (0.01 sec)
+mysql> select*from courses;
+
+| id   | name |
+|------|------|
+|    1 | HTML |
+|    2 | CSS  |
+
+2 rows in set (0.01 sec)
+
+mysql> select*from batches;
+
+| id   | name   |
+|------|--------|
+|    1 | batch2 |
+|    2 | batch2 |
+
+2 rows in set (0.01 sec)
+
+mysql> select*from batch_course;
+
+| id | batch_id | course_id |
+|----|----------|-----------|
+|  1 |        1 |         1 |
+|  2 |        2 |         2 |
+
+2 rows in set (0.00 sec)
+
+mysql> select*from batch_user;
+
+| id | batch_id | user_id |
+|----|----------|---------|
+|  1 |        1 |       1 |
+|  2 |        2 |       2 |
+
+2 rows in set (0.01 sec)
+
+mysql> select batch_user.id, users.name,batches.name from users inner join batch_user on users.id = batch_user.id inner join  batches on batches.id = users.id;
+
+| id | name   | name   |
+|----|--------|--------|
+|  1 | hasan  | batch2 |
+|  2 | ismail | batch2 |
+
+2 rows in set (0.00 sec)
+
+mysql> select courses.id, users.name,batches.name from users inner join courses on users.id = courses.id inner join  batches on batches.id = users.id where courses.name = 'HTML';
+
+| id   | name  | name   |
+|------|-------|--------|
+|    1 | hasan | batch2 |
+
+1 row in set (0.00 sec)
