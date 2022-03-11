@@ -329,19 +329,70 @@ Empty set (0.00 sec)
 
 4 rows in set (0.00 sec)
 ### MySQL ORDER BY Keyword:
-```select*from student_info order by name;```
+mysql> select * from  student order by name;
++---------+-------+--------------+------+
+| Roll_no | name  | address      | age  |
++---------+-------+--------------+------+
+|       4 | anbu  | chengalpattu |   20 |
+|       1 | hari  | chennai      |   17 |
+|       3 | kala  | chennai      |   18 |
+|       6 | meena | chennai      |   19 |
+|       7 | pavi  | chengalpattu |   20 |
+|       2 | vaani | madurai      |   19 |
+|       5 | valli | madurai      |   18 |
++---------+-------+--------------+------+
+7 rows in set (0.00 sec)
 
-| id | name      | DOB        |
-|----|-----------|------------|
-|  4 | gayathiri | 2000-08-17 |
-|  1 | maha      | 2000-11-23 |
-|  3 | pavi      | 2000-03-27 |
-|  5 | sharmi    | 2000-01-13 |
-|  2 | viji      | 1999-08-15 |
+mysql> select name from  student order by name;
++-------+
+| name  |
++-------+
+| anbu  |
+| hari  |
+| kala  |
+| meena |
+| pavi  |
+| vaani |
+| valli |
++-------+
+7 rows in set (0.00 sec)
 
-5 rows in set (0.01 sec)
+### MySQL GROUP BY KEYWORD:
+mysql> select*from student;
 
-date : 9/3/2022
+| Roll_no | name  | address      | age  |
+|---------|-------|--------------|------|
+|       1 | hari  | chennai      |   17 |
+|       2 | vaani | madurai      |   19 |
+|       3 | kala  | chennai      |   18 |
+|       4 | anbu  | chengalpattu |   20 |
+|       5 | valli | madurai      |   18 |
+|       6 | meena | chennai      |   19 |
+|       7 | pavi  | chengalpattu |   20 |
+
+7 rows in set (0.01 sec)
+
+mysql> select count(*) from student group by address;
+
+| count(*) |
+|----------|
+|        3 |
+|        2 |
+|        2 |
+
+3 rows in set (0.00 sec)
+
+mysql> select count(*),address from student group by address;
+
+| count(*) | address      |
++----------|--------------|
+|        3 | chennai      |
+|        2 | madurai      |
+|        2 | chengalpattu |
+
+3 rows in set (0.00 sec)
+
+### date : 9/3/2022 example query:
 
 mysql> show tables;
 
@@ -415,3 +466,86 @@ mysql> select courses.id, users.name,batches.name from users inner join courses 
 |    1 | hasan | batch2 |
 
 1 row in set (0.00 sec)
+
+### sub query:
+mysql> select*from student;
+
+| Roll_no | name  | address      | age  |
+|---------|-------|--------------|------|
+|       1 | hari  | chennai      |   17 |
+|       2 | vaani | madurai      |   19 |
+|       3 | kala  | chennai      |   18 |
+|       4 | anbu  | chengalpattu |   20 |
+|       5 | valli | madurai      |   18 |
+|       6 | meena | chennai      |   19 |
+|       7 | pavi  | chengalpattu |   20 |
+
+7 rows in set (0.01 sec)
+
+mysql> select a.name from (select*from student where age >18) as a;
+
+| name  |
+|-------|
+| vaani |
+| anbu  |
+| meena |
+| pavi  |
+
+4 rows in set (0.00 sec)
+
+mysql> select a.* from (select*from student where age >18) as a;
+
+| Roll_no | name  | address      | age  |
+|---------|-------|--------------|------|
+|       2 | vaani | madurai      |   19 |
+|       4 | anbu  | chengalpattu |   20 |
+|       6 | meena | chennai      |   19 |
+|       7 | pavi  | chengalpattu |   20 |
+
+4 rows in set (0.00 sec)
+
+### single table  view:
+ mysql> select*from student;
+
+| Roll_no | name  | address      | age  |
+|---------|-------|--------------|------|
+|       1 | hari  | chennai      |   17 |
+|       2 | vaani | madurai      |   19 |
+|       3 | kala  | chennai      |   18 |
+|       4 | anbu  | chengalpattu |   20 |
+|       5 | valli | madurai      |   18 |
+|       6 | meena | chennai      |   19 |
+|       7 | pavi  | chengalpattu |   20 |
+
+7 rows in set (0.00 sec)
+
+mysql> create view student_view as select Roll_no, name from student ;
+Query OK, 0 rows affected (0.03 sec)
+
+
+mysql> select * from student_view;
+
+| Roll_no | name  |
+|---------|-------|
+|       1 | hari  |
+|       2 | vaani |
+|       3 | kala  |
+|       4 | anbu  |
+|       5 | valli |
+|       6 | meena |
+|       7 | pavi  |
+
+7 rows in set (0.01 sec)
+
+mysql> create view student_view1 as select Roll_no, name from student where Roll_no > 4 ;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select*from student_view1;
+
+| Roll_no | name  |
+|---------|-------|
+|       5 | valli |
+|       6 | meena |
+|       7 | pavi  |
+
+3 rows in set (0.00 sec
