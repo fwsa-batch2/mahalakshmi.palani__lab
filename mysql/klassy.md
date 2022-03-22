@@ -174,3 +174,52 @@ mysql> select*from menu_price;
 |  5 |       5 |    35 | 2022-03-21 16:02:30 |
 
 5 rows in set (0.01 sec)
+``` sql
+create table orders(id tinyint primary key auto_increment, price_id tinyint, user_id tinyint,foreign key(user_id) references users(id), foreign key(price_id) references menu_price(id));
+```
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc orders;
++----------+---------+------+-----+---------+----------------+
+| Field    | Type    | Null | Key | Default | Extra          |
++----------+---------+------+-----+---------+----------------+
+| id       | tinyint | NO   | PRI | NULL    | auto_increment |
+| price_id | tinyint | YES  | MUL | NULL    |                |
+| user_id  | tinyint | YES  | MUL | NULL    |                |
++----------+---------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> insert into orders values(null,1,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into orders values(null,2,2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from orders;
++----+----------+---------+
+| id | price_id | user_id |
++----+----------+---------+
+|  1 |        1 |       1 |
+|  2 |        2 |       2 |
++----+----------+---------+
+2 rows in set (0.00 sec)
+
+``` sql
+create table ordered_items(order_id tinyint,food_id tinyint, qty tinyint, foreign key(order_id) references orders(id),foreign key(food_id) references menu(id));
+```
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> insert into ordered_items values(1,1,2);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into ordered_items values(1,2,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from ordered_items;
++----------+---------+------+
+| order_id | food_id | qty  |
++----------+---------+------+
+|        1 |       1 |    2 |
+|        1 |       2 |    1 |
++----------+---------+------+
+2 rows in set (0.00 sec)
