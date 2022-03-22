@@ -44,6 +44,7 @@ Query OK, 1 row affected (0.01 sec)
 ```
 
 | id | name        | mailId           | password      | role     |
+|----|-------------|------------------|---------------|----------|
 |  1 | vaishnavi   | vaishu@gmail.com | Vaishu@2003   | customer |
 |  2 | meenu       | meenu@gmail.com  | meenu@chandar | customer |
 |  3 | mahalakshmi | maha@gmail.com   | maha@2k23     | admin    |
