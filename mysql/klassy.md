@@ -1,3 +1,7 @@
+## Klassy Restaurant :
+``` sql
+create database klassy;
+```
 ```sql 
 use klassy;
 ```
@@ -113,9 +117,9 @@ mysql> insert into user_phoneno(user_id,phone_number) values(3,9789528233),(3,90
 Query OK, 2 rows affected (0.01 sec)
 Records: 2  Duplicates: 0  Warnings: 0
 
-mysql> select*from user_phon:no;
+mysql> select*from user_phonno;
 
-| user_id | phone_numb:r |
+| user_id | phone_number |
 |:--------|:-------------|
 |       1 |   9234562891 |
 |       1 |   9233256780 |
@@ -125,7 +129,9 @@ mysql> select*from user_phon:no;
 
 5 rows in set (0.00 sec)
 
-mysql> desc menu;
+``` sql 
+desc menu;
+```
 
 | Field         | Type        | Null | Key | Default           | Extra             |
 |:--------------|:------------|:-----|:----|:------------------|:------------------|
@@ -136,7 +142,9 @@ mysql> desc menu;
 | modified_date | timestamp   | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
 
 5 rows in set (0.01 sec)
-mysql> select*from menu;
+``` sql 
+select*from menu;
+```
 
 | id | food_name | status      | created_date        | modified_date       |
 |:---|:----------|:------------|:--------------------|:--------------------|
@@ -180,13 +188,13 @@ create table orders(id tinyint primary key auto_increment, price_id tinyint, use
 Query OK, 0 rows affected (0.06 sec)
 
 mysql> desc orders;
-+----------+---------+------+-----+---------+----------------+
+
 | Field    | Type    | Null | Key | Default | Extra          |
-+----------+---------+------+-----+---------+----------------+
+|----------|---------|------|-----|---------|----------------|
 | id       | tinyint | NO   | PRI | NULL    | auto_increment |
 | price_id | tinyint | YES  | MUL | NULL    |                |
 | user_id  | tinyint | YES  | MUL | NULL    |                |
-+----------+---------+------+-----+---------+----------------+
+
 3 rows in set (0.01 sec)
 
 mysql> insert into orders values(null,1,1);
@@ -196,12 +204,12 @@ mysql> insert into orders values(null,2,2);
 Query OK, 1 row affected (0.01 sec)
 
 mysql> select*from orders;
-+----+----------+---------+
+
 | id | price_id | user_id |
-+----+----------+---------+
+|----|----------|---------|
 |  1 |        1 |       1 |
 |  2 |        2 |       2 |
-+----+----------+---------+
+
 2 rows in set (0.00 sec)
 
 ``` sql
@@ -216,10 +224,43 @@ mysql> insert into ordered_items values(1,2,1);
 Query OK, 1 row affected (0.01 sec)
 
 mysql> select*from ordered_items;
-+----------+---------+------+
+
 | order_id | food_id | qty  |
-+----------+---------+------+
+|----------|---------|------|
 |        1 |       1 |    2 |
 |        1 |       2 |    1 |
-+----------+---------+------+
+
 2 rows in set (0.00 sec)
+
+``` sql
+create table review(user_id tinyint not null,rating tinyint check( rating >= 1 and rating <=5) not null,review text not null, foreign key(user_id) references users(id));
+```
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> desc review;
+
+| Field   | Type    | Null | Key | Default | Extra |
+|---------|---------|------|-----|---------|-------|
+| user_id | tinyint | NO   | MUL | NULL    |       |
+| rating  | tinyint | NO   |     | NULL    |       |
+| review  | text    | NO   |     | NULL    |       |
+
+3 rows in set (0.02 sec)
+
+
+
+mysql> insert into review values(1,4,"very good restaurant and i like idly");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into review values(2,5,"Great place to hangout with friends!! and gave us good recommendations.");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from review;
+
+| user_id | rating | review                                                                  |
+|---------|--------|-------------------------------------------------------------------------|
+|       1 |      4 | very good restaurant and i like idly                                    |
+|       2 |      5 | Great place to hangout with friends!! and gave us good recommendations. |
+
+2 rows in set (0.00 sec)
+

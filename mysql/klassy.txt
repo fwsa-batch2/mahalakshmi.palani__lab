@@ -158,7 +158,17 @@ mysql> desc user_address;
 6 rows in set (0.00 sec)
 
 mysql>
+mysql> insert into user_address values(1,20,"rajinistreet","chennai","tamilnadu",600017);
+Query OK, 1 row affected (0.02 sec)
 
+mysql> insert into user_address values(2,6,"meenustreet","trichy","tamilnadu",600008);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into user_address values(3,2/455,"kovalanstreet","chennai","tamilnadu",600100);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into user_address values(3,2/455,"kovalanstreet","chennai","tamilnadu",600100);
+Query OK, 1 row affected (0.01 sec)
 
 mysql> select*from users;
 +----+-------------+------------------+---------------+----------+
