@@ -8,7 +8,9 @@ use klassy;
 ```
 ###### Query OK, 0 rows affected (0.03 sec) 
 
-mysql> desc users;
+``` sql 
+desc users; 
+```
 
 | Field    | Type        | Null | Key | Default | Extra          |
 |:---------|:------------|:-----|:----|:--------|:---------------|
@@ -20,15 +22,22 @@ mysql> desc users;
 
 
 
-mysql> insert into users values(null,"vaishnavi","vaishu@gmail.com","Vaishu@2003","customer");
+``` sql
+insert into users values(null,"vaishnavi","vaishu@gmail.com","Vaishu@2003","customer");
+```
 Query OK, 1 row affected (0.01 sec)
+``` sql
+insert into users values(null,"meenu","meenu@gmail.com","meenu@chandar","customer");
+Query OK, 1 row affected (0.01 sec)
+```
 
-mysql> insert into users values(null,"meenu","meenu@gmail.com","meenu@chandar","customer");
+``` sql
+ insert into users values(null,"mahalakshmi","maha@gmail.com","maha@2k23","admin");
 Query OK, 1 row affected (0.01 sec)
-
-mysql> insert into users values(null,"mahalakshmi","maha@gmail.com","maha@2k23","admin");
-Query OK, 1 row affected (0.01 sec)
-mysql> select*from users;
+```
+``` sql 
+    select*from users;
+```
 
 | id | name        | mailId           | password      | role     |
 |  1 | vaishnavi   | vaishu@gmail.com | Vaishu@2003   | customer |
@@ -36,7 +45,9 @@ mysql> select*from users;
 |  3 | mahalakshmi | maha@gmail.com   | maha@2k23     | admin    |
 
 
-mysql> create table user_address(user_id tinyint ,door_no int , street varchar(20), city varchar(20) not null,state varchar(20) not null, pin_code int not null, foreign key(user_id) references users(id));
+``` sql 
+create table user_address(user_id tinyint ,door_no int , street varchar(20), city varchar(20) not null,state varchar(20) not null, pin_code int not null, foreign key(user_id) references users(id));
+```
 Query OK, 0 rows affected (0.05 sec)
 
 
@@ -74,7 +85,9 @@ mysql> select*from user_address;
 3 rows in set (0.00 sec)
 
 
-mysql> create table user_phoneno(user_id tinyint,phone_number int ,foreign key(user_id) references users(id));
+``` sql 
+create table user_phoneno(user_id tinyint,phone_number int ,foreign key(user_id) references users(id));
+```
 Query OK, 0 rows affected (0.09 sec)
 
 
@@ -135,7 +148,9 @@ mysql> select*from menu;
 
 5 rows in set (0.01 sec)
 
-mysql> create table menu_price(id tinyint auto_increment primary key, menu_id tinyint,price int,created_date timestamp not null default current_timestamp, foreign key(menu_id) references menu(id));
+``` sql
+create table menu_price(id tinyint auto_increment primary key, menu_id tinyint,price int,created_date timestamp not null default current_timestamp, foreign key(menu_id) references menu(id));
+```
 Query OK, 0 rows affected (0.03 sec)
 
 mysql> desc menu_price;
