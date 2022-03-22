@@ -504,7 +504,7 @@ mysql> select a.* from (select*from student where age >18) as a;
 
 4 rows in set (0.00 sec)
 
-### single table  view:
+### creating view single table:
  mysql> select*from student;
 
 | Roll_no | name  | address      | age  |
@@ -549,3 +549,34 @@ mysql> select*from student_view1;
 |       7 | pavi  |
 
 3 rows in set (0.00 sec
+### insert into single table:
+mysql> insert into student_view1 values(8,"geetha");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from student_view1;
+
+| Roll_no | name   |
+|---------|--------|
+|       5 | valli  |
+|       6 | meena  |
+|       7 | pavi   |
+|       8 | geetha |
+
+4 rows in set (0.00 sec)
+### creating view from multiple table :
+
+mysql> create view student_details as select name, course_id from student,course where student.Roll_no = course.Roll_no;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select*from student_details;
+
+| name  | course_id |
+|-------|-----------|
+| hari  |         1 |
+| vaani |         2 |
+| kala  |         4 |
+| valli |         2 |
+| meena |         1 |
+| pavi  |         3 |
+
+6 rows in set (0.00 sec)
