@@ -10,8 +10,6 @@ use klassy;
 ``` sql
  create table users(id tinyint primary key auto_increment,name varchar(20) not null check(length(name)>=3),mailId varchar(50) not null unique check(mailId like("__%@gmail.com")),password varchar(15) not null check(length(password)>=8),role varchar(20) not null);
 ```
-###### Query OK, 0 rows affected (0.03 sec) 
-
 ``` sql 
 desc users; 
 ```
@@ -29,15 +27,12 @@ desc users;
 ``` sql
 insert into users values(null,"vaishnavi","vaishu@gmail.com","Vaishu@2003","customer");
 ```
-Query OK, 1 row affected (0.01 sec)
 ``` sql
 insert into users values(null,"meenu","meenu@gmail.com","meenu@chandar","customer");
-Query OK, 1 row affected (0.01 sec)
 ```
 
 ``` sql
  insert into users values(null,"mahalakshmi","maha@gmail.com","maha@2k23","admin");
-Query OK, 1 row affected (0.01 sec)
 ```
 ``` sql 
     select*from users;
@@ -53,8 +48,6 @@ Query OK, 1 row affected (0.01 sec)
 ``` sql 
 create table user_address(user_id tinyint ,door_no int , street varchar(20), city varchar(20) not null,state varchar(20) not null, pin_code int not null, foreign key(user_id) references users(id));
 ```
-Query OK, 0 rows affected (0.05 sec)
-
 
 mysql> desc user_address;
 
@@ -67,18 +60,15 @@ mysql> desc user_address;
 | state    | varchar(20) | NO   |     | NULL    |       |
 | pin_code | int         | NO   |     | NULL    |       |
 
-6 rows in set (0.00 sec)
+
 mysql> insert into user_address values(1,20,"rajinistreet","chennai","tamilnadu",600017);
-Query OK, 1 row affected (0.02 sec)
 
 mysql> insert into user_address values(2,6,"meenustreet","trichy","tamilnadu",600008);
-Query OK, 1 row affected (0.01 sec)
 
 mysql> insert into user_address values(3,2/455,"kovalanstreet","chennai","tamilnadu",600100);
-Query OK, 1 row affected (0.01 sec)
 
 mysql> insert into user_address values(3,2/455,"kovalanstreet","chennai","tamilnadu",600100);
-Query OK, 1 row affected (0.01 sec)
+
 mysql> select*from user_address;
 
 | user_id | door_no | street         | city    | state      | pin_code |
@@ -87,7 +77,7 @@ mysql> select*from user_address;
 |       2 |       6 | rajini street  | trichy  | tamil nadu |   600008 |
 |       3 |      43 | kovalan street | chennai | tamil nadu |   600100 |
 
-3 rows in set (0.00 sec)
+
 
 
 ``` sql 
@@ -103,20 +93,15 @@ mysql> desc user_phoneno;
 | user_id      | tinyint | YES  | MUL | NULL    |       |
 | phone_number | bigint  | NO   |     | NULL    |       |
 
-2 rows in set (0.02 sec)
+
 
 mysql> insert into user_phoneno(user_id,phone_number) values(1,9234562891);
-Query OK, 1 row affected (0.01 sec)
 
 mysql> insert into user_phoneno(user_id,phone_number) values(1,9233256780);
-Query OK, 1 row affected (0.00 sec)
 
 mysql> insert into user_phoneno(user_id,phone_number) values(2,9897654330);
-Query OK, 1 row affected (0.01 sec)
 
 mysql> insert into user_phoneno(user_id,phone_number) values(3,9789528233),(3,9080227642);
-Query OK, 2 rows affected (0.01 sec)
-Records: 2  Duplicates: 0  Warnings: 0
 
 mysql> select*from user_phonno;
 
@@ -128,7 +113,7 @@ mysql> select*from user_phonno;
 |       3 |   9789528233 |
 |       3 |   90802276:2 |
 
-5 rows in set (0.00 sec)
+
 
 ``` sql 
 desc menu;
@@ -142,7 +127,7 @@ desc menu;
 | created_date  | timestamp   | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
 | modified_date | timestamp   | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
 
-5 rows in set (0.01 sec)
+
 ``` sql 
 select*from menu;
 ```
@@ -155,7 +140,7 @@ select*from menu;
 |  4 | Pongal    | available   | 2022-03-17 15:41:40 | 2022-03-17 15:41:40 |
 |  5 | Panayaram | unavailable | 2022-03-17 15:42:15 | 2022-03-17 15:42:15 |
 
-5 rows in set (0.01 sec)
+
 
 ``` sql
 create table menu_price(id tinyint auto_increment primary key, menu_id tinyint,price int,created_date timestamp not null default current_timestamp, foreign key(menu_id) references menu(id));
@@ -196,13 +181,10 @@ mysql> desc orders;
 | price_id | tinyint | YES  | MUL | NULL    |                |
 | user_id  | tinyint | YES  | MUL | NULL    |                |
 
-3 rows in set (0.01 sec)
-
 mysql> insert into orders values(null,1,1);
-Query OK, 1 row affected (0.01 sec)
 
 mysql> insert into orders values(null,2,2);
-Query OK, 1 row affected (0.01 sec)
+
 
 mysql> select*from orders;
 
@@ -211,18 +193,18 @@ mysql> select*from orders;
 |  1 |        1 |       1 |
 |  2 |        2 |       2 |
 
-2 rows in set (0.00 sec)
+
 
 ``` sql
 create table ordered_items(order_id tinyint,food_id tinyint, qty tinyint, foreign key(order_id) references orders(id),foreign key(food_id) references menu(id));
 ```
-Query OK, 0 rows affected (0.05 sec)
+
 
 mysql> insert into ordered_items values(1,1,2);
-Query OK, 1 row affected (0.02 sec)
+
 
 mysql> insert into ordered_items values(1,2,1);
-Query OK, 1 row affected (0.01 sec)
+
 
 mysql> select*from ordered_items;
 
@@ -231,12 +213,12 @@ mysql> select*from ordered_items;
 |        1 |       1 |    2 |
 |        1 |       2 |    1 |
 
-2 rows in set (0.00 sec)
+
 
 ``` sql
 create table review(user_id tinyint not null,rating tinyint check( rating >= 1 and rating <=5) not null,review text not null, foreign key(user_id) references users(id));
 ```
-Query OK, 0 rows affected (0.05 sec)
+
 
 mysql> desc review;
 
@@ -246,7 +228,7 @@ mysql> desc review;
 | rating  | tinyint | NO   |     | NULL    |       |
 | review  | text    | NO   |     | NULL    |       |
 
-3 rows in set (0.02 sec)
+
 
 
 
