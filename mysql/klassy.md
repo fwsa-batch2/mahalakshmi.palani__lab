@@ -246,7 +246,10 @@ mysql> select*from review;
 |       2 |      5 | Great place to hangout with friends!! and gave us good recommendations. |
 
 2 rows in set (0.00 sec)
-![Screenshot (147)](https://user-images.githubusercontent.com/82790009/159663236-c4842dd7-a85e-46d5-bfaf-91f3ef325cf0.png)
+![Screenshot (151)](https://user-images.githubusercontent.com/82790009/159880712-83c43ace-2779-46e0-b59d-b3734fd82ff8.png)
+![Drawing (1)](https://user-images.githubusercontent.com/82790009/159880887-d1c93216-e85f-43a8-82db-f31d3bb0e5bb.png)
+
+
 ![Screenshot (149)](https://user-images.githubusercontent.com/82790009/159672723-42b690a9-a563-4b75-974a-ec4e949da3a4.png)
 
 
