@@ -249,7 +249,9 @@ mysql> select*from review;
 
 
 
-![Screenshot (149)](https://user-images.githubusercontent.com/82790009/159672723-42b690a9-a563-4b75-974a-ec4e949da3a4.png)
+![Screenshot (154)](https://user-images.githubusercontent.com/82790009/159881507-e5ee8577-90fb-42dd-b075-8d2ce49495bf.png)
+![Screenshot (155)](https://user-images.githubusercontent.com/82790009/159881569-978a2bb6-f422-440c-8aaa-ae3e960689a4.png)
+
 
 
 
