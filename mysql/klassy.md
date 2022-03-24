@@ -118,27 +118,33 @@ mysql> select*from user_phonno;
 ``` sql 
 desc menu;
 ```
+mysql> desc menu;
 
 | Field         | Type        | Null | Key | Default           | Extra             |
-|:--------------|:------------|:-----|:----|:------------------|:------------------|
++---------------+-------------+------+-----+-------------------+-------------------|
 | id            | tinyint     | NO   | PRI | NULL              | auto_increment    |
 | food_name     | varchar(20) | NO   | UNI | NULL              |                   |
 | status        | varchar(20) | NO   |     | NULL              |                   |
 | created_date  | timestamp   | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
 | modified_date | timestamp   | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| image         | text        | NO   |     | NULL              |                   |
+
+6 rows in set (0.01 sec)
 
 
 ``` sql 
 select*from menu;
 ```
+mysql> select*from menu;
 
-| id | food_name | status      | created_date        | modified_date       |
-|:---|:----------|:------------|:--------------------|:--------------------|
-|  1 | Dosa      | available   | 2022-03-17 15:40:27 | 2022-03-17 15:40:27 |
-|  2 | Idly      | available   | 2022-03-17 15:40:46 | 2022-03-17 15:40:46 |
-|  3 | Medu vada | available   | 2022-03-17 15:41:03 | 2022-03-17 15:41:03 |
-|  4 | Pongal    | available   | 2022-03-17 15:41:40 | 2022-03-17 15:41:40 |
-|  5 | Panayaram | unavailable | 2022-03-17 15:42:15 | 2022-03-17 15:42:15 |
+| id | food_name | status      | created_date        | modified_date       | image                                                                                                                           |
+|----|-----------|-------------|---------------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------|
+|  1 | Dosa      | available   | 2022-03-17 15:40:27 | 2022-03-17 15:40:27 | https://vismaifood.com/storage/app/uploads/public/8b4/19e/427/thumb__700_0_0_0_auto.jpg                                         |
+|  2 | Idly      | available   | 2022-03-17 15:40:46 | 2022-03-17 15:40:46 | https://i0.wp.com/cookingfromheart.com/wp-content/uploads/2016/08/Idli-5.jpg?resize=683%2C1024&ssl=1                            |
+|  3 | Medu vada | available   | 2022-03-17 15:41:03 | 2022-03-17 15:41:03 | https://3.bp.blogspot.com/-iq_B__z5Za8/XLleMc-NVwI/AAAAAAAAQOM/8GxvXabQgz4huPLrbrf_v1_evCM9ow8AgCLcBGAs/s1600/Uddina_Vada_6.jpg |
+|  4 | Pongal    | available   | 2022-03-17 15:41:40 | 2022-03-17 15:41:40 | https://static.toiimg.com/photo/61051454.cms                                                                                    |
+|  5 | Panayaram | unavailable | 2022-03-17 15:42:15 | 2022-03-17 15:42:15 | https://static.toiimg.com/thumb/66554591.cms?imgsize=572772&width=800&height=800                                                |
+
 
 
 
