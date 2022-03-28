@@ -275,4 +275,5 @@ mysql> select*from review;
 2 rows in set (0.00 sec)
 
 ![Screenshot (154)](https://user-images.githubusercontent.com/82790009/159881507-e5ee8577-90fb-42dd-b075-8d2ce49495bf.png)
-<img width="556" alt="Screenshot 2022-03-28 200856" src="https://user-images.githubusercontent.com/82790009/160424514-f983ca28-e446-4bcd-aaac-d18a765611e6.png">
+![Screenshot (158)](https://user-images.githubusercontent.com/82790009/160426754-f575ec12-a528-4e3d-a732-f076138e06bc.png)
+
