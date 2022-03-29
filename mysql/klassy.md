@@ -294,5 +294,6 @@ mysql> select*from review;
 2 rows in set (0.00 sec)
 
 ![Screenshot (154)](https://user-images.githubusercontent.com/82790009/159881507-e5ee8577-90fb-42dd-b075-8d2ce49495bf.png)
-![Screenshot (158)](https://user-images.githubusercontent.com/82790009/160426754-f575ec12-a528-4e3d-a732-f076138e06bc.png)
+![Screenshot (159)](https://user-images.githubusercontent.com/82790009/160518263-f801d2be-6eb5-4904-8ee0-c34fef9b4865.png)
+
 
