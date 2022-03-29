@@ -116,6 +116,16 @@ mysql> desc menu;
 | modified_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
 | image         | text         | NO   |     | NULL              |                   |
 
+| Field         | Type         | Null | Key | Default           | Extra             |
+|---------------|--------------|------|-----|-------------------|-------------------|
+| menu_id       | int          | NO   | PRI | NULL              | auto_increment    |
+| food_name     | varchar(100) | NO   |     | NULL              |                   |
+| status        | varchar(20)  | NO   |     | NULL              |                   |
+| created_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| modified_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| image         | varchar(255) | YES  |     | NULL              |                   |
+
+
 6 rows in set (0.02 sec)
 
 mysql> insert into menu(food_name,status,image)  values("Dosa","Active","https://vismaifood.com/storage/app/uploads/public/8b4/19e/427/thumb__700_0_0_0_auto.jpg ");
@@ -188,12 +198,16 @@ Query OK, 0 rows affected (0.09 sec)
 
 mysql> desc orders;
 
-| Field    | Type | Null | Key | Default | Extra          |
-|----------|------|------|-----|---------|----------------|
-| id       | int  | NO   | PRI | NULL    | auto_increment |
-| price_id | int  | YES  | MUL | NULL    |                |
-| user_id  | int  | YES  | MUL | NULL    |                |
 
+
+
+| Field        | Type      | Null | Key | Default           | Extra             |
+|--------------|-----------|------|-----|-------------------|-------------------|
+| id           | int       | NO   | PRI | NULL              | auto_increment    |
+| price_id     | int       | YES  | MUL | NULL              |                   |
+| user_id      | int       | YES  | MUL | NULL              |                   |
+| ordered_date | timestamp | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++
 3 rows in set (0.01 sec)
 
 mysql> insert into orders values(null,1,1);
@@ -204,10 +218,11 @@ Query OK, 1 row affected (0.01 sec)
 
 mysql> select*from orders;
 
-| id | price_id | user_id |
-|----|----------|---------|
-|  1 |        1 |       1 |
-|  2 |        2 |       2 |
+| id | price_id | user_id | ordered_date        |
+|----|----------|---------|---------------------|
+|  1 |        1 |       1 | 2022-03-29 07:06:46 |
+|  2 |        2 |       2 | 2022-03-29 07:06:46 |
+
 
 2 rows in set (0.00 sec)
 
@@ -220,11 +235,13 @@ Query OK, 0 rows affected (0.07 sec)
 
 mysql> desc ordered_items;
 
-| Field    | Type | Null | Key | Default | Extra |
-|----------|------|------|-----|---------|-------|
-| order_id | int  | YES  | MUL | NULL    |       |
-| menu_id  | int  | YES  | MUL | NULL    |       |
-| qty      | int  | YES  |     | NULL    |       |
+| Field    | Type        | Null | Key | Default | Extra |
+|----------|-------------|------|-----|---------|-------|
+| order_id | int         | YES  | MUL | NULL    |       |
+| menu_id  | int         | YES  | MUL | NULL    |       |
+| qty      | int         | YES  |     | NULL    |       |
+| status   | varchar(20) | NO   |     | NULL    |       |
+
 
 3 rows in set (0.02 sec)
 
@@ -236,10 +253,12 @@ Query OK, 1 row affected (0.01 sec)
 
 mysql> select*from ordered_items;
 
-| order_id | menu_id | qty  |
-|----------|---------|------|
-|        1 |       1 |    2 |
-|        1 |       2 |    1 |
+
+| order_id | menu_id | qty  | status     |
+|----------|---------|------|------------|
+|        1 |       1 |    2 | delivered  |
+|        1 |       2 |    1 | on the way |
+
 
 2 rows in set (0.00 sec)
 
