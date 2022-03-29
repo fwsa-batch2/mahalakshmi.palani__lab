@@ -235,12 +235,15 @@ Query OK, 0 rows affected (0.07 sec)
 
 mysql> desc ordered_items;
 
-| Field    | Type        | Null | Key | Default | Extra |
-|----------|-------------|------|-----|---------|-------|
-| order_id | int         | YES  | MUL | NULL    |       |
-| menu_id  | int         | YES  | MUL | NULL    |       |
-| qty      | int         | YES  |     | NULL    |       |
-| status   | varchar(20) | NO   |     | NULL    |       |
+
+| Field    | Type        | Null | Key | Default | Extra          |
+|----------|-------------|------|-----|---------|----------------|
+| order_id | int         | YES  | MUL | NULL    |                |
+| menu_id  | int         | YES  | MUL | NULL    |                |
+| qty      | int         | YES  |     | NULL    |                |
+| status   | varchar(20) | NO   |     | NULL    |                |
+| id       | int         | NO   | PRI | NULL    | auto_increment |
+
 
 
 3 rows in set (0.02 sec)
@@ -290,6 +293,32 @@ mysql> select*from review;
 |---------|--------|-------------------------------------------------------------------------|
 |       1 |      4 | very good restaurant and i like this restaurant idly                    |
 |       2 |      5 | Great place to hangout with friends!! and gave us good recommendations. |
+
+2 rows in set (0.00 sec)
+mysql> create table payment(payment_id int not null,order_id int not null, foreign key(payment_id) references orders(id), foreign key(order_id) references ordered_items(id));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc payment;
+
+| Field      | Type | Null | Key | Default | Extra |
+|------------|------|------|-----|---------|-------|
+| payment_id | int  | NO   | MUL | NULL    |       |
+| order_id   | int  | NO   | MUL | NULL    |       |
+
+2 rows in set (0.00 sec)
+
+mysql> insert into payment values(1,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into payment values(2,2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from payment;
+
+| payment_id | order_id |
+|------------|----------|
+|          1 |        1 |
+|          2 |        2 |
 
 2 rows in set (0.00 sec)
 
