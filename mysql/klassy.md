@@ -114,15 +114,6 @@ mysql> desc menu;
 | status        | varchar(20)  | NO   |     | NULL              |                   |
 | created_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
 | modified_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
-| image         | text         | NO   |     | NULL              |                   |
-
-| Field         | Type         | Null | Key | Default           | Extra             |
-|---------------|--------------|------|-----|-------------------|-------------------|
-| menu_id       | int          | NO   | PRI | NULL              | auto_increment    |
-| food_name     | varchar(100) | NO   |     | NULL              |                   |
-| status        | varchar(20)  | NO   |     | NULL              |                   |
-| created_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
-| modified_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
 | image         | varchar(255) | YES  |     | NULL              |                   |
 
 
