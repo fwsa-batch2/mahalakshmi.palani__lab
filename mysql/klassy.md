@@ -312,6 +312,27 @@ mysql> select*from payment;
 |          2 |        2 |
 
 2 rows in set (0.00 sec)
+mysql> create table contact(user_id int not null, message text not null,foreign key(user_id) references users(id));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc contact;
+
+| Field   | Type | Null | Key | Default | Extra |
+|---------|------|------|-----|---------|-------|
+| user_id | int  | NO   | MUL | NULL    |       |
+| message | text | NO   |     | NULL    |       |
+
+2 rows in set (0.00 sec)
+mysql> insert into contact values(1,"i want more variety of dishes.");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from contact;
+
+| user_id | message                        |
+|---------|--------------------------------|
+|       1 | i want more variety of dishes. |
++
+1 row in set (0.00 sec)
 
 ![Screenshot (154)](https://user-images.githubusercontent.com/82790009/159881507-e5ee8577-90fb-42dd-b075-8d2ce49495bf.png)
 ![Screenshot (159)](https://user-images.githubusercontent.com/82790009/160518263-f801d2be-6eb5-4904-8ee0-c34fef9b4865.png)
