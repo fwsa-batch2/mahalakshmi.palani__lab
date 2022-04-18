@@ -6,23 +6,28 @@ public class ArmstrongNumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 	System.out.println("Enter your value : ");
-	        Scanner in = new Scanner(System.in);
-	        int number = in.nextInt();
-	        int temp = number;
-	        int d1,d2,d3;
-	        d1 = temp%10;
-	        temp = temp/10;
-	        d2 = temp%10;
-	        temp = temp/10;
-	        d3 = temp%10;
-	        temp=temp/10;
-	        int result = (d1*d1*d1)+(d2*d2*d2)+(d3*d3*d3);
-	        if(number == result){
-	            System.out.println(number+" is armstrong number");
-	        }else{
-	            System.out.println(number+" is not armstrong number");
+	        Scanner input = new Scanner(System.in);
+	        System.out.println("Eneter a Number:");
+	        int num1 = input.nextInt();
+	        System.out.println("Orginalnum = "+num1);
+	        int len = (Integer.toString(num1)).length();
+	        int temp = num1;
+	        int sum =0;
+	        while(temp !=0) {
+	        	int num2 = temp%10;
+	        	sum += (Math.pow(num2,len));
+	        	temp = temp/10;
+	        	
 	        }
+	        System.out.println("Armstrongnum  = "+sum);
+	        
+	        if(sum == num1) {
+	        	System.out.println(sum +"  this number is Armstrong number");
+	        }
+	        else {
+	        	System.out.println(sum+"  this number is Not an Armstrong number");
+	        }
+	        
 		}
 	
 }
