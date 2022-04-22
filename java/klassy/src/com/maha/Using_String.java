@@ -1,5 +1,5 @@
 package com.maha;
-
+// String object
 public class Using_String {
 
 	public static void main(String[] args) {
