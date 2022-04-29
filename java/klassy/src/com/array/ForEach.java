@@ -23,6 +23,14 @@ class basics{
 		vowel[4] = 'u';
 		System.out.println(vowel);
 		
+		// modifying array:
+		
+		vowel[2] = 'I';
+		vowel[3] = 'O';
+		System.out.println(vowel);
+		
+		//array length:
+		System.out.println(vowel.length);
 		
 	}
 }
