@@ -1,4 +1,5 @@
 package com.maha;
+import com.Fwsa.*;
 import java.lang.*;
 // Methods creation:
 public class Maths {
@@ -41,5 +42,17 @@ public class Maths {
 	public static int subration(int num1,int num2) {
 		int sub = num1-num2;
 		return sub;
+	}
+}
+// encapsulation connected with Fwsa package:
+
+class div extends TestClass{
+	public static void main(String[] args) {
+		div myObj = new div();
+		//System.out.println("default"+myObj.a);
+		System.out.println("public"+myObj.b);
+		System.out.println("protected"+myObj.c);
+		//System.out.println("private"+myObj.d );
+		
 	}
 }
