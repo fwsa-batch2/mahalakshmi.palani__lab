@@ -556,7 +556,8 @@ Query OK, 1 row affected (0.01 sec)
 mysql> select*from student_view1;
 
 | Roll_no | name   |
-|---------|--------|
+|
+---------|--------|
 |       5 | valli  |
 |       6 | meena  |
 |       7 | pavi   |
