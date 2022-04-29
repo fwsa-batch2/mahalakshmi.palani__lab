@@ -1,4 +1,4 @@
-package com.maha;
+package com.Fwsa;
 class A{
 	int x;
 	A(){
