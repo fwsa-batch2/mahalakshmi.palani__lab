@@ -1,4 +1,4 @@
-package com.maha;
+package com.Fwsa;
 // inheritance i'm used instanceof operator:
 public class Animals {
 
