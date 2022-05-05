@@ -7,7 +7,7 @@ class A{
 	A(int x){
 		this.x = x;
 	}
-	protected int area() {
+	 public int area() {
 		return 1;
 		
 	}

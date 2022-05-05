@@ -23,3 +23,14 @@ public class TwoDArray {
 	}
 
 }
+class array{
+	public static void main(String[] args) {
+		int[][] twoD = {{2,3,4},{4,5,6,7},{3,9,8}};
+		for(int i=0;i < twoD.length;i++) {
+			for(int j = 0;j<twoD[i].length;j++) {
+				System.out.print(twoD[i][j]+"  ");
+			}
+			System.out.println("");
+		}
+	}
+}
