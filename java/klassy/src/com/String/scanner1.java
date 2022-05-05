@@ -1,4 +1,4 @@
-package com.maha;
+package com.String;
 import java.util.Scanner;
 public class scanner1 {
 

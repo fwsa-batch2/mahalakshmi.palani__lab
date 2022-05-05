@@ -1,4 +1,4 @@
-package com.maha;
+package com.String;
 // String object
 public class Using_String {
 
