@@ -20,5 +20,5 @@ public class String_Methods {
 		System.out.println(s.startsWith("Sa"));//true    
 		System.out.println(s.endsWith("m"));//true
 		}
-
+		 
 }
