@@ -1,4 +1,4 @@
-package com.Fwsa;
+package com.Oops;
 
 public class TestClass {		// super class
 	

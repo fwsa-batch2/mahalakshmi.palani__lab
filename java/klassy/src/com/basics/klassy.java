@@ -1,4 +1,4 @@
-package com.maha;
+package com.basics;
 
 public class klassy {
 	public static void main(String[] args) {

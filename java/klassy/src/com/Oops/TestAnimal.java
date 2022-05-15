@@ -1,4 +1,4 @@
-package com.Fwsa;
+package com.Oops;
 abstract class Animal{			//Abstract class
 											
 	  public abstract void animalSound();		// Abstract method (does not have a body)

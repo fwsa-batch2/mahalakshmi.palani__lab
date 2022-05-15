@@ -1,4 +1,4 @@
-package DataType;
+package com.DataType;
 import java.util.Scanner;
 public class Fahrenheit_to_Celsius {
 

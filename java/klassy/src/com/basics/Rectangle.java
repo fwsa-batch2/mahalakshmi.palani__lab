@@ -1,4 +1,4 @@
-package com.maha;
+package com.basics;
 
 public class Rectangle {
 	int length;

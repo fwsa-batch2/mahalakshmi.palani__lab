@@ -1,4 +1,4 @@
-package com.maha;
+package com.basics;
 // inheritance: Single
 class Employee{  
 	 float salary=40000;  

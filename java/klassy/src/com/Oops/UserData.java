@@ -1,4 +1,4 @@
-package com.Fwsa;
+package com.Oops;
 class Encapsulation{
 	private int AccNo;
 	private String UserName;

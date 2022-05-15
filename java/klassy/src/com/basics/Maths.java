@@ -1,5 +1,5 @@
-package com.maha;
-import com.Fwsa.*;
+package com.basics;
+import com.Oops.*;
 import java.lang.*;
 // Methods creation:
 public class Maths {

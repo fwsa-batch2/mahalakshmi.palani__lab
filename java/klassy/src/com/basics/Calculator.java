@@ -1,4 +1,4 @@
-package com.maha;
+package com.basics;
 // creating constructor:
 public class Calculator {
 	int num1;

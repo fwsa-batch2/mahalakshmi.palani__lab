@@ -1,4 +1,4 @@
-package DataType;
+package com.DataType;
 
 public class StrongNum {
 

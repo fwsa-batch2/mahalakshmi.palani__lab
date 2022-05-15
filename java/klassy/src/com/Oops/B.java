@@ -1,4 +1,4 @@
-package com.Fwsa;
+package com.Oops;
 class A{
 	int x;
 	A(){

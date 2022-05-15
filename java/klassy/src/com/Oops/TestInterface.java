@@ -1,4 +1,4 @@
-package com.Fwsa;
+package com.Oops;
 interface Bank{    // interface class
 		float rateOfInterest();  
 	}  
