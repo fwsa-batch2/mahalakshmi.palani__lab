@@ -1,4 +1,4 @@
-package com.Oops;
+package com.Exception;
 
 public class ExceptionExample {
 
@@ -6,9 +6,9 @@ public class ExceptionExample {
 		// TODO Auto-generated method stub
 		try {
 			int num = 5/2;
-			//int num2 = 23/0;
+			int num2 = 23/0;
 			System.out.println(num);
-			//System.out.println(num2);
+			System.out.println(num2);
 			String s = null;
 			System.out.println(s.length());
 			
