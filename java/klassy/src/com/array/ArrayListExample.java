@@ -4,7 +4,7 @@ public class ArrayListExample {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ArrayList<String> list = new ArrayList<String>();
+		ArrayList list = new ArrayList();
 		list.add("maha");
 		list.add("lakshmi");
 		list.add("ragavi");
