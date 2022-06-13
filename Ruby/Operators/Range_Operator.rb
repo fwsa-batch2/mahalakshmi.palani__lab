@@ -28,3 +28,7 @@ Myrange.each do|i|
     puts i
         
 end
+
+num = (1...5).to_a.reverse
+puts "reverse #{num}"
+#puts (1..5).to_a.reverse   
