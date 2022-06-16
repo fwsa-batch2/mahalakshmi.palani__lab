@@ -15,3 +15,6 @@ print detail
 
 puts "mahalakshmi".object_id
 puts "ragavi".object_id
+# Symbols are useful as keys in a hash
+siva = { :name => "Siva", :location => "India" }
+puts "#{siva}"

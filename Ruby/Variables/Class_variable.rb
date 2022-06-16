@@ -21,5 +21,7 @@ obj2 = Maths.new()
 puts "#{obj1.add(5,6,9)}"
 puts Maths.class_variable_get(:@@no_of_customers)
 
-
+age = 20
+name = "Sachin"
+puts "I am " + name + " and I am " + age.to_s + " old."
 
