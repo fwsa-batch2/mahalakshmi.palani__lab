@@ -1,5 +1,7 @@
 package com.array;
 import java.util.*;
+
+//import com.Desing_pattern.A;
 public class ArrayListExample {
 
 	public static void main(String[] args) {
@@ -37,3 +39,4 @@ public class ArrayListExample {
 	}
 
 }
+ 
